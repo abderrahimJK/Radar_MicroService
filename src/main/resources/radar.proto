@@ -1,0 +1,32 @@
+syntax ="proto3";
+option java_package="ma.enset.radarservice.web.grpc.stub";
+
+message Radar {
+  int64 id=1;
+  string vitesseMax=2;
+  string longitude =3;
+  string latitude=4;
+}
+service RadarGrpcService {
+  rpc getRadar(GetRadarRequest) returns (GetRadarResponse);
+  rpc getListRadars(GetAllRadarsRequest) returns ( GetAllRadarsResponse);
+  rpc saveRadar(SaveRadarRequest) returns (SaveRadarResponse);
+}
+message GetRadarRequest{
+  int64 id=1;
+}
+message GetRadarResponse{
+  Radar radar=1;
+}
+message GetAllRadarsRequest {}
+message GetAllRadarsResponse{
+  repeated  Radar radars = 1;
+}
+message SaveRadarRequest {
+  string vitesseMax=1;
+  string longitude=2;
+  string latitude=3;
+}
+message SaveRadarResponse {
+  Radar radar=1;
+}
