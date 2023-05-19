@@ -8,8 +8,6 @@ import ma.enset.radarservice.repository.RadarRepository;
 import ma.enset.radarservice.web.grpc.stub.RadarGrpcServiceGrpc;
 import ma.enset.radarservice.web.grpc.stub.RadarOuterClass;
 import net.devh.boot.grpc.server.service.GrpcService;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,9 +23,9 @@ public class RadarGrpcService extends RadarGrpcServiceGrpc.RadarGrpcServiceImplB
     public void saveRadar(RadarOuterClass.SaveRadarRequest request, StreamObserver<RadarOuterClass.SaveRadarResponse> responseObserver) {
         Radar radar = new Radar().builder()
                 .id(null)
-                .vitesseMax(Double.parseDouble(request.getVitesseMax()))
-                .longitude(Double.parseDouble(request.getLongitude()))
-                .latitude(Double.parseDouble(request.getLatitude()))
+                .vitesseMax(request.getVitesseMax())
+                .longitude(request.getLongitude())
+                .latitude(request.getLatitude())
                 .build();
 
         radarRepository.save(radar);
@@ -58,5 +56,37 @@ public class RadarGrpcService extends RadarGrpcServiceGrpc.RadarGrpcServiceImplB
         radarBuilder.addAllRadars(radars);
         responseObserver.onNext(radarBuilder.build());
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public StreamObserver<RadarOuterClass.SaveRadarRequest> radarControl(StreamObserver<RadarOuterClass.DetectOverSpeed> responseObserver) {
+        return new StreamObserver<RadarOuterClass.SaveRadarRequest>() {
+
+            boolean overSpeed = false;
+            @Override
+            public void onNext(RadarOuterClass.SaveRadarRequest saveRadarRequest) {
+                if(saveRadarRequest.getVitesseVehicule() > saveRadarRequest.getVitesseMax()) {
+                    overSpeed = true;
+
+                }
+                RadarOuterClass.DetectOverSpeed response = RadarOuterClass.DetectOverSpeed.newBuilder()
+                        .setIsSpeeding(overSpeed)
+                        .build();
+                System.out.println("Speed Status "+ overSpeed);
+                responseObserver.onNext(response);
+                overSpeed = false;
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+
+                responseObserver.onCompleted();
+            }
+        };
     }
 }

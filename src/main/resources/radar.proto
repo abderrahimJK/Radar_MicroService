@@ -3,14 +3,15 @@ option java_package="ma.enset.radarservice.web.grpc.stub";
 
 message Radar {
   int64 id=1;
-  string vitesseMax=2;
-  string longitude =3;
-  string latitude=4;
+  float vitesseMax=2;
+  float longitude =4;
+  float latitude=5;
 }
 service RadarGrpcService {
   rpc getRadar(GetRadarRequest) returns (GetRadarResponse);
   rpc getListRadars(GetAllRadarsRequest) returns ( GetAllRadarsResponse);
   rpc saveRadar(SaveRadarRequest) returns (SaveRadarResponse);
+  rpc radarControl(stream SaveRadarRequest) returns (stream DetectOverSpeed);
 }
 message GetRadarRequest{
   int64 id=1;
@@ -23,9 +24,14 @@ message GetAllRadarsResponse{
   repeated  Radar radars = 1;
 }
 message SaveRadarRequest {
-  string vitesseMax=1;
-  string longitude=2;
-  string latitude=3;
+  float vitesseMax=1;
+  float vitesseVehicule = 2;
+  float longitude=3;
+  float latitude=4;
+}
+
+message DetectOverSpeed{
+  bool isSpeeding = 1;
 }
 message SaveRadarResponse {
   Radar radar=1;

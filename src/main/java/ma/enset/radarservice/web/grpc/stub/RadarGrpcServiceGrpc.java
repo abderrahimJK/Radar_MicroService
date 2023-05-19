@@ -123,6 +123,38 @@ public final class RadarGrpcServiceGrpc {
      return getSaveRadarMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest,
+      ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed> getRadarControlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "radarControl",
+      requestType = ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest.class,
+      responseType = ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest,
+      ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed> getRadarControlMethod() {
+    io.grpc.MethodDescriptor<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest, ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed> getRadarControlMethod;
+    if ((getRadarControlMethod = RadarGrpcServiceGrpc.getRadarControlMethod) == null) {
+      synchronized (RadarGrpcServiceGrpc.class) {
+        if ((getRadarControlMethod = RadarGrpcServiceGrpc.getRadarControlMethod) == null) {
+          RadarGrpcServiceGrpc.getRadarControlMethod = getRadarControlMethod = 
+              io.grpc.MethodDescriptor.<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest, ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "RadarGrpcService", "radarControl"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.getDefaultInstance()))
+                  .setSchemaDescriptor(new RadarGrpcServiceMethodDescriptorSupplier("radarControl"))
+                  .build();
+          }
+        }
+     }
+     return getRadarControlMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -171,6 +203,13 @@ public final class RadarGrpcServiceGrpc {
       asyncUnimplementedUnaryCall(getSaveRadarMethod(), responseObserver);
     }
 
+    /**
+     */
+    public io.grpc.stub.StreamObserver<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest> radarControl(
+        io.grpc.stub.StreamObserver<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed> responseObserver) {
+      return asyncUnimplementedStreamingCall(getRadarControlMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -194,6 +233,13 @@ public final class RadarGrpcServiceGrpc {
                 ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest,
                 ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarResponse>(
                   this, METHODID_SAVE_RADAR)))
+          .addMethod(
+            getRadarControlMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest,
+                ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed>(
+                  this, METHODID_RADAR_CONTROL)))
           .build();
     }
   }
@@ -238,6 +284,14 @@ public final class RadarGrpcServiceGrpc {
         io.grpc.stub.StreamObserver<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSaveRadarMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest> radarControl(
+        io.grpc.stub.StreamObserver<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getRadarControlMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -327,6 +381,7 @@ public final class RadarGrpcServiceGrpc {
   private static final int METHODID_GET_RADAR = 0;
   private static final int METHODID_GET_LIST_RADARS = 1;
   private static final int METHODID_SAVE_RADAR = 2;
+  private static final int METHODID_RADAR_CONTROL = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -367,6 +422,9 @@ public final class RadarGrpcServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_RADAR_CONTROL:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.radarControl(
+              (io.grpc.stub.StreamObserver<ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -421,6 +479,7 @@ public final class RadarGrpcServiceGrpc {
               .addMethod(getGetRadarMethod())
               .addMethod(getGetListRadarsMethod())
               .addMethod(getSaveRadarMethod())
+              .addMethod(getRadarControlMethod())
               .build();
         }
       }

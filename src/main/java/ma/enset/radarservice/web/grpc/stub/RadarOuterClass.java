@@ -25,40 +25,22 @@ public final class RadarOuterClass {
     long getId();
 
     /**
-     * <code>string vitesseMax = 2;</code>
+     * <code>float vitesseMax = 2;</code>
      * @return The vitesseMax.
      */
-    java.lang.String getVitesseMax();
-    /**
-     * <code>string vitesseMax = 2;</code>
-     * @return The bytes for vitesseMax.
-     */
-    com.google.protobuf.ByteString
-        getVitesseMaxBytes();
+    float getVitesseMax();
 
     /**
-     * <code>string longitude = 3;</code>
+     * <code>float longitude = 4;</code>
      * @return The longitude.
      */
-    java.lang.String getLongitude();
-    /**
-     * <code>string longitude = 3;</code>
-     * @return The bytes for longitude.
-     */
-    com.google.protobuf.ByteString
-        getLongitudeBytes();
+    float getLongitude();
 
     /**
-     * <code>string latitude = 4;</code>
+     * <code>float latitude = 5;</code>
      * @return The latitude.
      */
-    java.lang.String getLatitude();
-    /**
-     * <code>string latitude = 4;</code>
-     * @return The bytes for latitude.
-     */
-    com.google.protobuf.ByteString
-        getLatitudeBytes();
+    float getLatitude();
   }
   /**
    * Protobuf type {@code Radar}
@@ -73,9 +55,6 @@ public final class RadarOuterClass {
       super(builder);
     }
     private Radar() {
-      vitesseMax_ = "";
-      longitude_ = "";
-      latitude_ = "";
     }
 
     @java.lang.Override
@@ -113,22 +92,19 @@ public final class RadarOuterClass {
               id_ = input.readInt64();
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 21: {
 
-              vitesseMax_ = s;
+              vitesseMax_ = input.readFloat();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 37: {
 
-              longitude_ = s;
+              longitude_ = input.readFloat();
               break;
             }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 45: {
 
-              latitude_ = s;
+              latitude_ = input.readFloat();
               break;
             }
             default: {
@@ -174,111 +150,33 @@ public final class RadarOuterClass {
     }
 
     public static final int VITESSEMAX_FIELD_NUMBER = 2;
-    private volatile java.lang.Object vitesseMax_;
+    private float vitesseMax_;
     /**
-     * <code>string vitesseMax = 2;</code>
+     * <code>float vitesseMax = 2;</code>
      * @return The vitesseMax.
      */
-    public java.lang.String getVitesseMax() {
-      java.lang.Object ref = vitesseMax_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vitesseMax_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string vitesseMax = 2;</code>
-     * @return The bytes for vitesseMax.
-     */
-    public com.google.protobuf.ByteString
-        getVitesseMaxBytes() {
-      java.lang.Object ref = vitesseMax_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        vitesseMax_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public float getVitesseMax() {
+      return vitesseMax_;
     }
 
-    public static final int LONGITUDE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object longitude_;
+    public static final int LONGITUDE_FIELD_NUMBER = 4;
+    private float longitude_;
     /**
-     * <code>string longitude = 3;</code>
+     * <code>float longitude = 4;</code>
      * @return The longitude.
      */
-    public java.lang.String getLongitude() {
-      java.lang.Object ref = longitude_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        longitude_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string longitude = 3;</code>
-     * @return The bytes for longitude.
-     */
-    public com.google.protobuf.ByteString
-        getLongitudeBytes() {
-      java.lang.Object ref = longitude_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        longitude_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public float getLongitude() {
+      return longitude_;
     }
 
-    public static final int LATITUDE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object latitude_;
+    public static final int LATITUDE_FIELD_NUMBER = 5;
+    private float latitude_;
     /**
-     * <code>string latitude = 4;</code>
+     * <code>float latitude = 5;</code>
      * @return The latitude.
      */
-    public java.lang.String getLatitude() {
-      java.lang.Object ref = latitude_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latitude_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string latitude = 4;</code>
-     * @return The bytes for latitude.
-     */
-    public com.google.protobuf.ByteString
-        getLatitudeBytes() {
-      java.lang.Object ref = latitude_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latitude_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public float getLatitude() {
+      return latitude_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -298,14 +196,14 @@ public final class RadarOuterClass {
       if (id_ != 0L) {
         output.writeInt64(1, id_);
       }
-      if (!getVitesseMaxBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, vitesseMax_);
+      if (vitesseMax_ != 0F) {
+        output.writeFloat(2, vitesseMax_);
       }
-      if (!getLongitudeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, longitude_);
+      if (longitude_ != 0F) {
+        output.writeFloat(4, longitude_);
       }
-      if (!getLatitudeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, latitude_);
+      if (latitude_ != 0F) {
+        output.writeFloat(5, latitude_);
       }
       unknownFields.writeTo(output);
     }
@@ -320,14 +218,17 @@ public final class RadarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, id_);
       }
-      if (!getVitesseMaxBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, vitesseMax_);
+      if (vitesseMax_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, vitesseMax_);
       }
-      if (!getLongitudeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, longitude_);
+      if (longitude_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, longitude_);
       }
-      if (!getLatitudeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, latitude_);
+      if (latitude_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, latitude_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -346,12 +247,15 @@ public final class RadarOuterClass {
 
       if (getId()
           != other.getId()) return false;
-      if (!getVitesseMax()
-          .equals(other.getVitesseMax())) return false;
-      if (!getLongitude()
-          .equals(other.getLongitude())) return false;
-      if (!getLatitude()
-          .equals(other.getLatitude())) return false;
+      if (java.lang.Float.floatToIntBits(getVitesseMax())
+          != java.lang.Float.floatToIntBits(
+              other.getVitesseMax())) return false;
+      if (java.lang.Float.floatToIntBits(getLongitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLongitude())) return false;
+      if (java.lang.Float.floatToIntBits(getLatitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLatitude())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -367,11 +271,14 @@ public final class RadarOuterClass {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getId());
       hash = (37 * hash) + VITESSEMAX_FIELD_NUMBER;
-      hash = (53 * hash) + getVitesseMax().hashCode();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getVitesseMax());
       hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + getLongitude().hashCode();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLongitude());
       hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + getLatitude().hashCode();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLatitude());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -507,11 +414,11 @@ public final class RadarOuterClass {
         super.clear();
         id_ = 0L;
 
-        vitesseMax_ = "";
+        vitesseMax_ = 0F;
 
-        longitude_ = "";
+        longitude_ = 0F;
 
-        latitude_ = "";
+        latitude_ = 0F;
 
         return this;
       }
@@ -594,17 +501,14 @@ public final class RadarOuterClass {
         if (other.getId() != 0L) {
           setId(other.getId());
         }
-        if (!other.getVitesseMax().isEmpty()) {
-          vitesseMax_ = other.vitesseMax_;
-          onChanged();
+        if (other.getVitesseMax() != 0F) {
+          setVitesseMax(other.getVitesseMax());
         }
-        if (!other.getLongitude().isEmpty()) {
-          longitude_ = other.longitude_;
-          onChanged();
+        if (other.getLongitude() != 0F) {
+          setLongitude(other.getLongitude());
         }
-        if (!other.getLatitude().isEmpty()) {
-          latitude_ = other.latitude_;
-          onChanged();
+        if (other.getLatitude() != 0F) {
+          setLatitude(other.getLatitude());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -665,230 +569,92 @@ public final class RadarOuterClass {
         return this;
       }
 
-      private java.lang.Object vitesseMax_ = "";
+      private float vitesseMax_ ;
       /**
-       * <code>string vitesseMax = 2;</code>
+       * <code>float vitesseMax = 2;</code>
        * @return The vitesseMax.
        */
-      public java.lang.String getVitesseMax() {
-        java.lang.Object ref = vitesseMax_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          vitesseMax_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public float getVitesseMax() {
+        return vitesseMax_;
       }
       /**
-       * <code>string vitesseMax = 2;</code>
-       * @return The bytes for vitesseMax.
-       */
-      public com.google.protobuf.ByteString
-          getVitesseMaxBytes() {
-        java.lang.Object ref = vitesseMax_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          vitesseMax_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string vitesseMax = 2;</code>
+       * <code>float vitesseMax = 2;</code>
        * @param value The vitesseMax to set.
        * @return This builder for chaining.
        */
-      public Builder setVitesseMax(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setVitesseMax(float value) {
+        
         vitesseMax_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string vitesseMax = 2;</code>
+       * <code>float vitesseMax = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearVitesseMax() {
         
-        vitesseMax_ = getDefaultInstance().getVitesseMax();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string vitesseMax = 2;</code>
-       * @param value The bytes for vitesseMax to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVitesseMaxBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        vitesseMax_ = value;
+        vitesseMax_ = 0F;
         onChanged();
         return this;
       }
 
-      private java.lang.Object longitude_ = "";
+      private float longitude_ ;
       /**
-       * <code>string longitude = 3;</code>
+       * <code>float longitude = 4;</code>
        * @return The longitude.
        */
-      public java.lang.String getLongitude() {
-        java.lang.Object ref = longitude_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          longitude_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public float getLongitude() {
+        return longitude_;
       }
       /**
-       * <code>string longitude = 3;</code>
-       * @return The bytes for longitude.
-       */
-      public com.google.protobuf.ByteString
-          getLongitudeBytes() {
-        java.lang.Object ref = longitude_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          longitude_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string longitude = 3;</code>
+       * <code>float longitude = 4;</code>
        * @param value The longitude to set.
        * @return This builder for chaining.
        */
-      public Builder setLongitude(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setLongitude(float value) {
+        
         longitude_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string longitude = 3;</code>
+       * <code>float longitude = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearLongitude() {
         
-        longitude_ = getDefaultInstance().getLongitude();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string longitude = 3;</code>
-       * @param value The bytes for longitude to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLongitudeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        longitude_ = value;
+        longitude_ = 0F;
         onChanged();
         return this;
       }
 
-      private java.lang.Object latitude_ = "";
+      private float latitude_ ;
       /**
-       * <code>string latitude = 4;</code>
+       * <code>float latitude = 5;</code>
        * @return The latitude.
        */
-      public java.lang.String getLatitude() {
-        java.lang.Object ref = latitude_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          latitude_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public float getLatitude() {
+        return latitude_;
       }
       /**
-       * <code>string latitude = 4;</code>
-       * @return The bytes for latitude.
-       */
-      public com.google.protobuf.ByteString
-          getLatitudeBytes() {
-        java.lang.Object ref = latitude_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          latitude_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string latitude = 4;</code>
+       * <code>float latitude = 5;</code>
        * @param value The latitude to set.
        * @return This builder for chaining.
        */
-      public Builder setLatitude(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setLatitude(float value) {
+        
         latitude_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string latitude = 4;</code>
+       * <code>float latitude = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearLatitude() {
         
-        latitude_ = getDefaultInstance().getLatitude();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string latitude = 4;</code>
-       * @param value The bytes for latitude to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLatitudeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        latitude_ = value;
+        latitude_ = 0F;
         onChanged();
         return this;
       }
@@ -3261,40 +3027,28 @@ public final class RadarOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string vitesseMax = 1;</code>
+     * <code>float vitesseMax = 1;</code>
      * @return The vitesseMax.
      */
-    java.lang.String getVitesseMax();
-    /**
-     * <code>string vitesseMax = 1;</code>
-     * @return The bytes for vitesseMax.
-     */
-    com.google.protobuf.ByteString
-        getVitesseMaxBytes();
+    float getVitesseMax();
 
     /**
-     * <code>string longitude = 2;</code>
+     * <code>float vitesseVehicule = 2;</code>
+     * @return The vitesseVehicule.
+     */
+    float getVitesseVehicule();
+
+    /**
+     * <code>float longitude = 3;</code>
      * @return The longitude.
      */
-    java.lang.String getLongitude();
-    /**
-     * <code>string longitude = 2;</code>
-     * @return The bytes for longitude.
-     */
-    com.google.protobuf.ByteString
-        getLongitudeBytes();
+    float getLongitude();
 
     /**
-     * <code>string latitude = 3;</code>
+     * <code>float latitude = 4;</code>
      * @return The latitude.
      */
-    java.lang.String getLatitude();
-    /**
-     * <code>string latitude = 3;</code>
-     * @return The bytes for latitude.
-     */
-    com.google.protobuf.ByteString
-        getLatitudeBytes();
+    float getLatitude();
   }
   /**
    * Protobuf type {@code SaveRadarRequest}
@@ -3309,9 +3063,6 @@ public final class RadarOuterClass {
       super(builder);
     }
     private SaveRadarRequest() {
-      vitesseMax_ = "";
-      longitude_ = "";
-      latitude_ = "";
     }
 
     @java.lang.Override
@@ -3344,22 +3095,24 @@ public final class RadarOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 13: {
 
-              vitesseMax_ = s;
+              vitesseMax_ = input.readFloat();
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 21: {
 
-              longitude_ = s;
+              vitesseVehicule_ = input.readFloat();
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 29: {
 
-              latitude_ = s;
+              longitude_ = input.readFloat();
+              break;
+            }
+            case 37: {
+
+              latitude_ = input.readFloat();
               break;
             }
             default: {
@@ -3395,111 +3148,43 @@ public final class RadarOuterClass {
     }
 
     public static final int VITESSEMAX_FIELD_NUMBER = 1;
-    private volatile java.lang.Object vitesseMax_;
+    private float vitesseMax_;
     /**
-     * <code>string vitesseMax = 1;</code>
+     * <code>float vitesseMax = 1;</code>
      * @return The vitesseMax.
      */
-    public java.lang.String getVitesseMax() {
-      java.lang.Object ref = vitesseMax_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        vitesseMax_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string vitesseMax = 1;</code>
-     * @return The bytes for vitesseMax.
-     */
-    public com.google.protobuf.ByteString
-        getVitesseMaxBytes() {
-      java.lang.Object ref = vitesseMax_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        vitesseMax_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public float getVitesseMax() {
+      return vitesseMax_;
     }
 
-    public static final int LONGITUDE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object longitude_;
+    public static final int VITESSEVEHICULE_FIELD_NUMBER = 2;
+    private float vitesseVehicule_;
     /**
-     * <code>string longitude = 2;</code>
+     * <code>float vitesseVehicule = 2;</code>
+     * @return The vitesseVehicule.
+     */
+    public float getVitesseVehicule() {
+      return vitesseVehicule_;
+    }
+
+    public static final int LONGITUDE_FIELD_NUMBER = 3;
+    private float longitude_;
+    /**
+     * <code>float longitude = 3;</code>
      * @return The longitude.
      */
-    public java.lang.String getLongitude() {
-      java.lang.Object ref = longitude_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        longitude_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string longitude = 2;</code>
-     * @return The bytes for longitude.
-     */
-    public com.google.protobuf.ByteString
-        getLongitudeBytes() {
-      java.lang.Object ref = longitude_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        longitude_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public float getLongitude() {
+      return longitude_;
     }
 
-    public static final int LATITUDE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object latitude_;
+    public static final int LATITUDE_FIELD_NUMBER = 4;
+    private float latitude_;
     /**
-     * <code>string latitude = 3;</code>
+     * <code>float latitude = 4;</code>
      * @return The latitude.
      */
-    public java.lang.String getLatitude() {
-      java.lang.Object ref = latitude_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        latitude_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string latitude = 3;</code>
-     * @return The bytes for latitude.
-     */
-    public com.google.protobuf.ByteString
-        getLatitudeBytes() {
-      java.lang.Object ref = latitude_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        latitude_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public float getLatitude() {
+      return latitude_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3516,14 +3201,17 @@ public final class RadarOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getVitesseMaxBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, vitesseMax_);
+      if (vitesseMax_ != 0F) {
+        output.writeFloat(1, vitesseMax_);
       }
-      if (!getLongitudeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, longitude_);
+      if (vitesseVehicule_ != 0F) {
+        output.writeFloat(2, vitesseVehicule_);
       }
-      if (!getLatitudeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, latitude_);
+      if (longitude_ != 0F) {
+        output.writeFloat(3, longitude_);
+      }
+      if (latitude_ != 0F) {
+        output.writeFloat(4, latitude_);
       }
       unknownFields.writeTo(output);
     }
@@ -3534,14 +3222,21 @@ public final class RadarOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getVitesseMaxBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, vitesseMax_);
+      if (vitesseMax_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(1, vitesseMax_);
       }
-      if (!getLongitudeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, longitude_);
+      if (vitesseVehicule_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, vitesseVehicule_);
       }
-      if (!getLatitudeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, latitude_);
+      if (longitude_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, longitude_);
+      }
+      if (latitude_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(4, latitude_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3558,12 +3253,18 @@ public final class RadarOuterClass {
       }
       ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest other = (ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest) obj;
 
-      if (!getVitesseMax()
-          .equals(other.getVitesseMax())) return false;
-      if (!getLongitude()
-          .equals(other.getLongitude())) return false;
-      if (!getLatitude()
-          .equals(other.getLatitude())) return false;
+      if (java.lang.Float.floatToIntBits(getVitesseMax())
+          != java.lang.Float.floatToIntBits(
+              other.getVitesseMax())) return false;
+      if (java.lang.Float.floatToIntBits(getVitesseVehicule())
+          != java.lang.Float.floatToIntBits(
+              other.getVitesseVehicule())) return false;
+      if (java.lang.Float.floatToIntBits(getLongitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLongitude())) return false;
+      if (java.lang.Float.floatToIntBits(getLatitude())
+          != java.lang.Float.floatToIntBits(
+              other.getLatitude())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3576,11 +3277,17 @@ public final class RadarOuterClass {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + VITESSEMAX_FIELD_NUMBER;
-      hash = (53 * hash) + getVitesseMax().hashCode();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getVitesseMax());
+      hash = (37 * hash) + VITESSEVEHICULE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getVitesseVehicule());
       hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + getLongitude().hashCode();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLongitude());
       hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
-      hash = (53 * hash) + getLatitude().hashCode();
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLatitude());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3714,11 +3421,13 @@ public final class RadarOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        vitesseMax_ = "";
+        vitesseMax_ = 0F;
 
-        longitude_ = "";
+        vitesseVehicule_ = 0F;
 
-        latitude_ = "";
+        longitude_ = 0F;
+
+        latitude_ = 0F;
 
         return this;
       }
@@ -3747,6 +3456,7 @@ public final class RadarOuterClass {
       public ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest buildPartial() {
         ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest result = new ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest(this);
         result.vitesseMax_ = vitesseMax_;
+        result.vitesseVehicule_ = vitesseVehicule_;
         result.longitude_ = longitude_;
         result.latitude_ = latitude_;
         onBuilt();
@@ -3797,17 +3507,17 @@ public final class RadarOuterClass {
 
       public Builder mergeFrom(ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest other) {
         if (other == ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest.getDefaultInstance()) return this;
-        if (!other.getVitesseMax().isEmpty()) {
-          vitesseMax_ = other.vitesseMax_;
-          onChanged();
+        if (other.getVitesseMax() != 0F) {
+          setVitesseMax(other.getVitesseMax());
         }
-        if (!other.getLongitude().isEmpty()) {
-          longitude_ = other.longitude_;
-          onChanged();
+        if (other.getVitesseVehicule() != 0F) {
+          setVitesseVehicule(other.getVitesseVehicule());
         }
-        if (!other.getLatitude().isEmpty()) {
-          latitude_ = other.latitude_;
-          onChanged();
+        if (other.getLongitude() != 0F) {
+          setLongitude(other.getLongitude());
+        }
+        if (other.getLatitude() != 0F) {
+          setLatitude(other.getLatitude());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3838,230 +3548,122 @@ public final class RadarOuterClass {
         return this;
       }
 
-      private java.lang.Object vitesseMax_ = "";
+      private float vitesseMax_ ;
       /**
-       * <code>string vitesseMax = 1;</code>
+       * <code>float vitesseMax = 1;</code>
        * @return The vitesseMax.
        */
-      public java.lang.String getVitesseMax() {
-        java.lang.Object ref = vitesseMax_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          vitesseMax_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public float getVitesseMax() {
+        return vitesseMax_;
       }
       /**
-       * <code>string vitesseMax = 1;</code>
-       * @return The bytes for vitesseMax.
-       */
-      public com.google.protobuf.ByteString
-          getVitesseMaxBytes() {
-        java.lang.Object ref = vitesseMax_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          vitesseMax_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string vitesseMax = 1;</code>
+       * <code>float vitesseMax = 1;</code>
        * @param value The vitesseMax to set.
        * @return This builder for chaining.
        */
-      public Builder setVitesseMax(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setVitesseMax(float value) {
+        
         vitesseMax_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string vitesseMax = 1;</code>
+       * <code>float vitesseMax = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearVitesseMax() {
         
-        vitesseMax_ = getDefaultInstance().getVitesseMax();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string vitesseMax = 1;</code>
-       * @param value The bytes for vitesseMax to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVitesseMaxBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        vitesseMax_ = value;
+        vitesseMax_ = 0F;
         onChanged();
         return this;
       }
 
-      private java.lang.Object longitude_ = "";
+      private float vitesseVehicule_ ;
       /**
-       * <code>string longitude = 2;</code>
+       * <code>float vitesseVehicule = 2;</code>
+       * @return The vitesseVehicule.
+       */
+      public float getVitesseVehicule() {
+        return vitesseVehicule_;
+      }
+      /**
+       * <code>float vitesseVehicule = 2;</code>
+       * @param value The vitesseVehicule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVitesseVehicule(float value) {
+        
+        vitesseVehicule_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float vitesseVehicule = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVitesseVehicule() {
+        
+        vitesseVehicule_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float longitude_ ;
+      /**
+       * <code>float longitude = 3;</code>
        * @return The longitude.
        */
-      public java.lang.String getLongitude() {
-        java.lang.Object ref = longitude_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          longitude_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public float getLongitude() {
+        return longitude_;
       }
       /**
-       * <code>string longitude = 2;</code>
-       * @return The bytes for longitude.
-       */
-      public com.google.protobuf.ByteString
-          getLongitudeBytes() {
-        java.lang.Object ref = longitude_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          longitude_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string longitude = 2;</code>
+       * <code>float longitude = 3;</code>
        * @param value The longitude to set.
        * @return This builder for chaining.
        */
-      public Builder setLongitude(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setLongitude(float value) {
+        
         longitude_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string longitude = 2;</code>
+       * <code>float longitude = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearLongitude() {
         
-        longitude_ = getDefaultInstance().getLongitude();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string longitude = 2;</code>
-       * @param value The bytes for longitude to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLongitudeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        longitude_ = value;
+        longitude_ = 0F;
         onChanged();
         return this;
       }
 
-      private java.lang.Object latitude_ = "";
+      private float latitude_ ;
       /**
-       * <code>string latitude = 3;</code>
+       * <code>float latitude = 4;</code>
        * @return The latitude.
        */
-      public java.lang.String getLatitude() {
-        java.lang.Object ref = latitude_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          latitude_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public float getLatitude() {
+        return latitude_;
       }
       /**
-       * <code>string latitude = 3;</code>
-       * @return The bytes for latitude.
-       */
-      public com.google.protobuf.ByteString
-          getLatitudeBytes() {
-        java.lang.Object ref = latitude_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          latitude_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string latitude = 3;</code>
+       * <code>float latitude = 4;</code>
        * @param value The latitude to set.
        * @return This builder for chaining.
        */
-      public Builder setLatitude(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      public Builder setLatitude(float value) {
+        
         latitude_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string latitude = 3;</code>
+       * <code>float latitude = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearLatitude() {
         
-        latitude_ = getDefaultInstance().getLatitude();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string latitude = 3;</code>
-       * @param value The bytes for latitude to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLatitudeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        latitude_ = value;
+        latitude_ = 0F;
         onChanged();
         return this;
       }
@@ -4113,6 +3715,493 @@ public final class RadarOuterClass {
 
     @java.lang.Override
     public ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DetectOverSpeedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:DetectOverSpeed)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool isSpeeding = 1;</code>
+     * @return The isSpeeding.
+     */
+    boolean getIsSpeeding();
+  }
+  /**
+   * Protobuf type {@code DetectOverSpeed}
+   */
+  public  static final class DetectOverSpeed extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:DetectOverSpeed)
+      DetectOverSpeedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DetectOverSpeed.newBuilder() to construct.
+    private DetectOverSpeed(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DetectOverSpeed() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new DetectOverSpeed();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DetectOverSpeed(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              isSpeeding_ = input.readBool();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ma.enset.radarservice.web.grpc.stub.RadarOuterClass.internal_static_DetectOverSpeed_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ma.enset.radarservice.web.grpc.stub.RadarOuterClass.internal_static_DetectOverSpeed_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.class, ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.Builder.class);
+    }
+
+    public static final int ISSPEEDING_FIELD_NUMBER = 1;
+    private boolean isSpeeding_;
+    /**
+     * <code>bool isSpeeding = 1;</code>
+     * @return The isSpeeding.
+     */
+    public boolean getIsSpeeding() {
+      return isSpeeding_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (isSpeeding_ != false) {
+        output.writeBool(1, isSpeeding_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (isSpeeding_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, isSpeeding_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed)) {
+        return super.equals(obj);
+      }
+      ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed other = (ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed) obj;
+
+      if (getIsSpeeding()
+          != other.getIsSpeeding()) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ISSPEEDING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsSpeeding());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code DetectOverSpeed}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:DetectOverSpeed)
+        ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ma.enset.radarservice.web.grpc.stub.RadarOuterClass.internal_static_DetectOverSpeed_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ma.enset.radarservice.web.grpc.stub.RadarOuterClass.internal_static_DetectOverSpeed_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.class, ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.Builder.class);
+      }
+
+      // Construct using ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        isSpeeding_ = false;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ma.enset.radarservice.web.grpc.stub.RadarOuterClass.internal_static_DetectOverSpeed_descriptor;
+      }
+
+      @java.lang.Override
+      public ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed getDefaultInstanceForType() {
+        return ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed build() {
+        ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed buildPartial() {
+        ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed result = new ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed(this);
+        result.isSpeeding_ = isSpeeding_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed) {
+          return mergeFrom((ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed other) {
+        if (other == ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed.getDefaultInstance()) return this;
+        if (other.getIsSpeeding() != false) {
+          setIsSpeeding(other.getIsSpeeding());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean isSpeeding_ ;
+      /**
+       * <code>bool isSpeeding = 1;</code>
+       * @return The isSpeeding.
+       */
+      public boolean getIsSpeeding() {
+        return isSpeeding_;
+      }
+      /**
+       * <code>bool isSpeeding = 1;</code>
+       * @param value The isSpeeding to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsSpeeding(boolean value) {
+        
+        isSpeeding_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isSpeeding = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsSpeeding() {
+        
+        isSpeeding_ = false;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:DetectOverSpeed)
+    }
+
+    // @@protoc_insertion_point(class_scope:DetectOverSpeed)
+    private static final ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed();
+    }
+
+    public static ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DetectOverSpeed>
+        PARSER = new com.google.protobuf.AbstractParser<DetectOverSpeed>() {
+      @java.lang.Override
+      public DetectOverSpeed parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DetectOverSpeed(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DetectOverSpeed> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DetectOverSpeed> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public ma.enset.radarservice.web.grpc.stub.RadarOuterClass.DetectOverSpeed getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4767,6 +4856,11 @@ public final class RadarOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SaveRadarRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DetectOverSpeed_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DetectOverSpeed_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SaveRadarResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4781,20 +4875,23 @@ public final class RadarOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\013radar.proto\"L\n\005Radar\022\n\n\002id\030\001 \001(\003\022\022\n\nvi" +
-      "tesseMax\030\002 \001(\t\022\021\n\tlongitude\030\003 \001(\t\022\020\n\010lat" +
-      "itude\030\004 \001(\t\"\035\n\017GetRadarRequest\022\n\n\002id\030\001 \001" +
+      "tesseMax\030\002 \001(\002\022\021\n\tlongitude\030\004 \001(\002\022\020\n\010lat" +
+      "itude\030\005 \001(\002\"\035\n\017GetRadarRequest\022\n\n\002id\030\001 \001" +
       "(\003\")\n\020GetRadarResponse\022\025\n\005radar\030\001 \001(\0132\006." +
       "Radar\"\025\n\023GetAllRadarsRequest\".\n\024GetAllRa" +
-      "darsResponse\022\026\n\006radars\030\001 \003(\0132\006.Radar\"K\n\020" +
-      "SaveRadarRequest\022\022\n\nvitesseMax\030\001 \001(\t\022\021\n\t" +
-      "longitude\030\002 \001(\t\022\020\n\010latitude\030\003 \001(\t\"*\n\021Sav" +
-      "eRadarResponse\022\025\n\005radar\030\001 \001(\0132\006.Radar2\265\001" +
-      "\n\020RadarGrpcService\022/\n\010getRadar\022\020.GetRada" +
-      "rRequest\032\021.GetRadarResponse\022<\n\rgetListRa" +
-      "dars\022\024.GetAllRadarsRequest\032\025.GetAllRadar" +
-      "sResponse\0222\n\tsaveRadar\022\021.SaveRadarReques" +
-      "t\032\022.SaveRadarResponseB%\n#ma.enset.radars" +
-      "ervice.web.grpc.stubb\006proto3"
+      "darsResponse\022\026\n\006radars\030\001 \003(\0132\006.Radar\"d\n\020" +
+      "SaveRadarRequest\022\022\n\nvitesseMax\030\001 \001(\002\022\027\n\017" +
+      "vitesseVehicule\030\002 \001(\002\022\021\n\tlongitude\030\003 \001(\002" +
+      "\022\020\n\010latitude\030\004 \001(\002\"%\n\017DetectOverSpeed\022\022\n" +
+      "\nisSpeeding\030\001 \001(\010\"*\n\021SaveRadarResponse\022\025" +
+      "\n\005radar\030\001 \001(\0132\006.Radar2\356\001\n\020RadarGrpcServi" +
+      "ce\022/\n\010getRadar\022\020.GetRadarRequest\032\021.GetRa" +
+      "darResponse\022<\n\rgetListRadars\022\024.GetAllRad" +
+      "arsRequest\032\025.GetAllRadarsResponse\0222\n\tsav" +
+      "eRadar\022\021.SaveRadarRequest\032\022.SaveRadarRes" +
+      "ponse\0227\n\014radarControl\022\021.SaveRadarRequest" +
+      "\032\020.DetectOverSpeed(\0010\001B%\n#ma.enset.radar" +
+      "service.web.grpc.stubb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4835,9 +4932,15 @@ public final class RadarOuterClass {
     internal_static_SaveRadarRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SaveRadarRequest_descriptor,
-        new java.lang.String[] { "VitesseMax", "Longitude", "Latitude", });
-    internal_static_SaveRadarResponse_descriptor =
+        new java.lang.String[] { "VitesseMax", "VitesseVehicule", "Longitude", "Latitude", });
+    internal_static_DetectOverSpeed_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_DetectOverSpeed_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DetectOverSpeed_descriptor,
+        new java.lang.String[] { "IsSpeeding", });
+    internal_static_SaveRadarResponse_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_SaveRadarResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SaveRadarResponse_descriptor,
