@@ -3,12 +3,17 @@ package ma.enset.radarservice.web;
 import io.grpc.stub.StreamObserver;
 import lombok.AllArgsConstructor;
 import ma.enset.radarservice.entities.Radar;
+import ma.enset.radarservice.feign.InfractionClietnRepository;
+import ma.enset.radarservice.feign.VehiculeClientRepository;
 import ma.enset.radarservice.mappers.RadarMapper;
+import ma.enset.radarservice.model.Infraction;
+import ma.enset.radarservice.model.Vehicule;
 import ma.enset.radarservice.repository.RadarRepository;
 import ma.enset.radarservice.web.grpc.stub.RadarGrpcServiceGrpc;
 import ma.enset.radarservice.web.grpc.stub.RadarOuterClass;
 import net.devh.boot.grpc.server.service.GrpcService;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,6 +22,9 @@ import java.util.stream.Collectors;
 public class RadarGrpcService extends RadarGrpcServiceGrpc.RadarGrpcServiceImplBase {
 
     RadarRepository radarRepository;
+    VehiculeClientRepository vehiculeClientRepository;
+    InfractionClietnRepository infractionClietnRepository;
+
     RadarMapper radarMapper;
 
     @Override
@@ -68,6 +76,21 @@ public class RadarGrpcService extends RadarGrpcServiceGrpc.RadarGrpcServiceImplB
                 if(saveRadarRequest.getVitesseVehicule() > saveRadarRequest.getVitesseMax()) {
                     overSpeed = true;
 
+                    Vehicule vehicule = vehiculeClientRepository.getVehiculeByMatricule(saveRadarRequest.getMatricule());
+                    Radar radar = radarRepository.findById(saveRadarRequest.getRadarId()).get();
+                    infractionClietnRepository.save(
+                            new Infraction().builder()
+                                    .date(new Date())
+                                    .vehicule_id(vehicule.getId())
+                                    .radar_id(radar.getId())
+                                    .vitesseMax(saveRadarRequest.getVitesseMax())
+                                    .vitesse_vehicule(saveRadarRequest.getVitesseVehicule())
+                                    .vehicule(vehicule)
+                                    .radar(radar)
+                                    .montant(calculateFine(saveRadarRequest.getVitesseVehicule()-saveRadarRequest.getVitesseMax()))
+                                    .build()
+                    );
+
                 }
                 RadarOuterClass.DetectOverSpeed response = RadarOuterClass.DetectOverSpeed.newBuilder()
                         .setIsSpeeding(overSpeed)
@@ -88,5 +111,20 @@ public class RadarGrpcService extends RadarGrpcServiceGrpc.RadarGrpcServiceImplB
                 responseObserver.onCompleted();
             }
         };
+    }
+
+    public float calculateFine(float overSpeedRang) {
+        float fine = 0.0f;
+
+        // Check violation type and assign corresponding fine amount
+        if (overSpeedRang >= 30) {
+            fine = 700.0f;
+        } else if (overSpeedRang >= 20) {
+            fine = 400.0f;
+        } else{
+            fine = 200.0f;
+        }
+
+        return fine;
     }
 }

@@ -1,8 +1,0 @@
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: grpc
-          uri: https://localhost:5060
-          predicates:
-            - Path=/grpc/**

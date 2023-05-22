@@ -3039,13 +3039,31 @@ public final class RadarOuterClass {
     float getVitesseVehicule();
 
     /**
-     * <code>float longitude = 3;</code>
+     * <code>string matricule = 3;</code>
+     * @return The matricule.
+     */
+    java.lang.String getMatricule();
+    /**
+     * <code>string matricule = 3;</code>
+     * @return The bytes for matricule.
+     */
+    com.google.protobuf.ByteString
+        getMatriculeBytes();
+
+    /**
+     * <code>int64 radarId = 4;</code>
+     * @return The radarId.
+     */
+    long getRadarId();
+
+    /**
+     * <code>float longitude = 5;</code>
      * @return The longitude.
      */
     float getLongitude();
 
     /**
-     * <code>float latitude = 4;</code>
+     * <code>float latitude = 6;</code>
      * @return The latitude.
      */
     float getLatitude();
@@ -3063,6 +3081,7 @@ public final class RadarOuterClass {
       super(builder);
     }
     private SaveRadarRequest() {
+      matricule_ = "";
     }
 
     @java.lang.Override
@@ -3105,12 +3124,23 @@ public final class RadarOuterClass {
               vitesseVehicule_ = input.readFloat();
               break;
             }
-            case 29: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              matricule_ = s;
+              break;
+            }
+            case 32: {
+
+              radarId_ = input.readInt64();
+              break;
+            }
+            case 45: {
 
               longitude_ = input.readFloat();
               break;
             }
-            case 37: {
+            case 53: {
 
               latitude_ = input.readFloat();
               break;
@@ -3167,20 +3197,66 @@ public final class RadarOuterClass {
       return vitesseVehicule_;
     }
 
-    public static final int LONGITUDE_FIELD_NUMBER = 3;
+    public static final int MATRICULE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object matricule_;
+    /**
+     * <code>string matricule = 3;</code>
+     * @return The matricule.
+     */
+    public java.lang.String getMatricule() {
+      java.lang.Object ref = matricule_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        matricule_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string matricule = 3;</code>
+     * @return The bytes for matricule.
+     */
+    public com.google.protobuf.ByteString
+        getMatriculeBytes() {
+      java.lang.Object ref = matricule_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        matricule_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RADARID_FIELD_NUMBER = 4;
+    private long radarId_;
+    /**
+     * <code>int64 radarId = 4;</code>
+     * @return The radarId.
+     */
+    public long getRadarId() {
+      return radarId_;
+    }
+
+    public static final int LONGITUDE_FIELD_NUMBER = 5;
     private float longitude_;
     /**
-     * <code>float longitude = 3;</code>
+     * <code>float longitude = 5;</code>
      * @return The longitude.
      */
     public float getLongitude() {
       return longitude_;
     }
 
-    public static final int LATITUDE_FIELD_NUMBER = 4;
+    public static final int LATITUDE_FIELD_NUMBER = 6;
     private float latitude_;
     /**
-     * <code>float latitude = 4;</code>
+     * <code>float latitude = 6;</code>
      * @return The latitude.
      */
     public float getLatitude() {
@@ -3207,11 +3283,17 @@ public final class RadarOuterClass {
       if (vitesseVehicule_ != 0F) {
         output.writeFloat(2, vitesseVehicule_);
       }
+      if (!getMatriculeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, matricule_);
+      }
+      if (radarId_ != 0L) {
+        output.writeInt64(4, radarId_);
+      }
       if (longitude_ != 0F) {
-        output.writeFloat(3, longitude_);
+        output.writeFloat(5, longitude_);
       }
       if (latitude_ != 0F) {
-        output.writeFloat(4, latitude_);
+        output.writeFloat(6, latitude_);
       }
       unknownFields.writeTo(output);
     }
@@ -3230,13 +3312,20 @@ public final class RadarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, vitesseVehicule_);
       }
+      if (!getMatriculeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, matricule_);
+      }
+      if (radarId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, radarId_);
+      }
       if (longitude_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, longitude_);
+          .computeFloatSize(5, longitude_);
       }
       if (latitude_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, latitude_);
+          .computeFloatSize(6, latitude_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3259,6 +3348,10 @@ public final class RadarOuterClass {
       if (java.lang.Float.floatToIntBits(getVitesseVehicule())
           != java.lang.Float.floatToIntBits(
               other.getVitesseVehicule())) return false;
+      if (!getMatricule()
+          .equals(other.getMatricule())) return false;
+      if (getRadarId()
+          != other.getRadarId()) return false;
       if (java.lang.Float.floatToIntBits(getLongitude())
           != java.lang.Float.floatToIntBits(
               other.getLongitude())) return false;
@@ -3282,6 +3375,11 @@ public final class RadarOuterClass {
       hash = (37 * hash) + VITESSEVEHICULE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getVitesseVehicule());
+      hash = (37 * hash) + MATRICULE_FIELD_NUMBER;
+      hash = (53 * hash) + getMatricule().hashCode();
+      hash = (37 * hash) + RADARID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRadarId());
       hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getLongitude());
@@ -3425,6 +3523,10 @@ public final class RadarOuterClass {
 
         vitesseVehicule_ = 0F;
 
+        matricule_ = "";
+
+        radarId_ = 0L;
+
         longitude_ = 0F;
 
         latitude_ = 0F;
@@ -3457,6 +3559,8 @@ public final class RadarOuterClass {
         ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest result = new ma.enset.radarservice.web.grpc.stub.RadarOuterClass.SaveRadarRequest(this);
         result.vitesseMax_ = vitesseMax_;
         result.vitesseVehicule_ = vitesseVehicule_;
+        result.matricule_ = matricule_;
+        result.radarId_ = radarId_;
         result.longitude_ = longitude_;
         result.latitude_ = latitude_;
         onBuilt();
@@ -3512,6 +3616,13 @@ public final class RadarOuterClass {
         }
         if (other.getVitesseVehicule() != 0F) {
           setVitesseVehicule(other.getVitesseVehicule());
+        }
+        if (!other.getMatricule().isEmpty()) {
+          matricule_ = other.matricule_;
+          onChanged();
+        }
+        if (other.getRadarId() != 0L) {
+          setRadarId(other.getRadarId());
         }
         if (other.getLongitude() != 0F) {
           setLongitude(other.getLongitude());
@@ -3608,16 +3719,122 @@ public final class RadarOuterClass {
         return this;
       }
 
+      private java.lang.Object matricule_ = "";
+      /**
+       * <code>string matricule = 3;</code>
+       * @return The matricule.
+       */
+      public java.lang.String getMatricule() {
+        java.lang.Object ref = matricule_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          matricule_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string matricule = 3;</code>
+       * @return The bytes for matricule.
+       */
+      public com.google.protobuf.ByteString
+          getMatriculeBytes() {
+        java.lang.Object ref = matricule_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          matricule_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string matricule = 3;</code>
+       * @param value The matricule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatricule(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        matricule_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string matricule = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMatricule() {
+        
+        matricule_ = getDefaultInstance().getMatricule();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string matricule = 3;</code>
+       * @param value The bytes for matricule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMatriculeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        matricule_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long radarId_ ;
+      /**
+       * <code>int64 radarId = 4;</code>
+       * @return The radarId.
+       */
+      public long getRadarId() {
+        return radarId_;
+      }
+      /**
+       * <code>int64 radarId = 4;</code>
+       * @param value The radarId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRadarId(long value) {
+        
+        radarId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 radarId = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRadarId() {
+        
+        radarId_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private float longitude_ ;
       /**
-       * <code>float longitude = 3;</code>
+       * <code>float longitude = 5;</code>
        * @return The longitude.
        */
       public float getLongitude() {
         return longitude_;
       }
       /**
-       * <code>float longitude = 3;</code>
+       * <code>float longitude = 5;</code>
        * @param value The longitude to set.
        * @return This builder for chaining.
        */
@@ -3628,7 +3845,7 @@ public final class RadarOuterClass {
         return this;
       }
       /**
-       * <code>float longitude = 3;</code>
+       * <code>float longitude = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearLongitude() {
@@ -3640,14 +3857,14 @@ public final class RadarOuterClass {
 
       private float latitude_ ;
       /**
-       * <code>float latitude = 4;</code>
+       * <code>float latitude = 6;</code>
        * @return The latitude.
        */
       public float getLatitude() {
         return latitude_;
       }
       /**
-       * <code>float latitude = 4;</code>
+       * <code>float latitude = 6;</code>
        * @param value The latitude to set.
        * @return This builder for chaining.
        */
@@ -3658,7 +3875,7 @@ public final class RadarOuterClass {
         return this;
       }
       /**
-       * <code>float latitude = 4;</code>
+       * <code>float latitude = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLatitude() {
@@ -4879,19 +5096,20 @@ public final class RadarOuterClass {
       "itude\030\005 \001(\002\"\035\n\017GetRadarRequest\022\n\n\002id\030\001 \001" +
       "(\003\")\n\020GetRadarResponse\022\025\n\005radar\030\001 \001(\0132\006." +
       "Radar\"\025\n\023GetAllRadarsRequest\".\n\024GetAllRa" +
-      "darsResponse\022\026\n\006radars\030\001 \003(\0132\006.Radar\"d\n\020" +
-      "SaveRadarRequest\022\022\n\nvitesseMax\030\001 \001(\002\022\027\n\017" +
-      "vitesseVehicule\030\002 \001(\002\022\021\n\tlongitude\030\003 \001(\002" +
-      "\022\020\n\010latitude\030\004 \001(\002\"%\n\017DetectOverSpeed\022\022\n" +
-      "\nisSpeeding\030\001 \001(\010\"*\n\021SaveRadarResponse\022\025" +
-      "\n\005radar\030\001 \001(\0132\006.Radar2\356\001\n\020RadarGrpcServi" +
-      "ce\022/\n\010getRadar\022\020.GetRadarRequest\032\021.GetRa" +
-      "darResponse\022<\n\rgetListRadars\022\024.GetAllRad" +
-      "arsRequest\032\025.GetAllRadarsResponse\0222\n\tsav" +
-      "eRadar\022\021.SaveRadarRequest\032\022.SaveRadarRes" +
-      "ponse\0227\n\014radarControl\022\021.SaveRadarRequest" +
-      "\032\020.DetectOverSpeed(\0010\001B%\n#ma.enset.radar" +
-      "service.web.grpc.stubb\006proto3"
+      "darsResponse\022\026\n\006radars\030\001 \003(\0132\006.Radar\"\210\001\n" +
+      "\020SaveRadarRequest\022\022\n\nvitesseMax\030\001 \001(\002\022\027\n" +
+      "\017vitesseVehicule\030\002 \001(\002\022\021\n\tmatricule\030\003 \001(" +
+      "\t\022\017\n\007radarId\030\004 \001(\003\022\021\n\tlongitude\030\005 \001(\002\022\020\n" +
+      "\010latitude\030\006 \001(\002\"%\n\017DetectOverSpeed\022\022\n\nis" +
+      "Speeding\030\001 \001(\010\"*\n\021SaveRadarResponse\022\025\n\005r" +
+      "adar\030\001 \001(\0132\006.Radar2\356\001\n\020RadarGrpcService\022" +
+      "/\n\010getRadar\022\020.GetRadarRequest\032\021.GetRadar" +
+      "Response\022<\n\rgetListRadars\022\024.GetAllRadars" +
+      "Request\032\025.GetAllRadarsResponse\0222\n\tsaveRa" +
+      "dar\022\021.SaveRadarRequest\032\022.SaveRadarRespon" +
+      "se\0227\n\014radarControl\022\021.SaveRadarRequest\032\020." +
+      "DetectOverSpeed(\0010\001B%\n#ma.enset.radarser" +
+      "vice.web.grpc.stubb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4932,7 +5150,7 @@ public final class RadarOuterClass {
     internal_static_SaveRadarRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SaveRadarRequest_descriptor,
-        new java.lang.String[] { "VitesseMax", "VitesseVehicule", "Longitude", "Latitude", });
+        new java.lang.String[] { "VitesseMax", "VitesseVehicule", "Matricule", "RadarId", "Longitude", "Latitude", });
     internal_static_DetectOverSpeed_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_DetectOverSpeed_fieldAccessorTable = new

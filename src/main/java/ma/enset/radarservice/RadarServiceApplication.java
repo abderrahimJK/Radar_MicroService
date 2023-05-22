@@ -5,9 +5,14 @@ import ma.enset.radarservice.repository.RadarRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
+import java.text.DecimalFormat;
+import java.util.Random;
+
 @SpringBootApplication
+@EnableFeignClients
 public class RadarServiceApplication {
 
     public static void main(String[] args) {
@@ -17,6 +22,7 @@ public class RadarServiceApplication {
     @Bean
     CommandLineRunner start(RadarRepository radarRepository){
         return args -> {
+            DecimalFormat numberFormat = new DecimalFormat("#.0000");
             for (int i = 0; i < 4; i++) {
                 radarRepository.save(
                         new Radar().builder()
@@ -29,4 +35,5 @@ public class RadarServiceApplication {
             }
         };
     }
+
 }

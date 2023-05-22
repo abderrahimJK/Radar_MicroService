@@ -26,8 +26,10 @@ message GetAllRadarsResponse{
 message SaveRadarRequest {
   float vitesseMax=1;
   float vitesseVehicule = 2;
-  float longitude=3;
-  float latitude=4;
+  string matricule = 3;
+  int64 radarId = 4;
+  float longitude=5;
+  float latitude=6;
 }
 
 message DetectOverSpeed{
